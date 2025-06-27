@@ -99,7 +99,6 @@ const timerReducer = (state: TimerState, action: TimerAction): TimerState => {
       const now = Date.now();
 
       if (completedTimer) {
-        // Create a log entry
         const category = state.categories.find(
           (cat) => cat.id === completedTimer.categoryId
         );
@@ -201,7 +200,6 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [state, dispatch] = useReducer(timerReducer, initialState);
 
-  // Load state from AsyncStorage on mount
   useEffect(() => {
     const loadState = async () => {
       try {
@@ -230,7 +228,6 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({
     loadState();
   }, []);
 
-  // Save state to AsyncStorage whenever it changes
   useEffect(() => {
     const saveState = async () => {
       try {

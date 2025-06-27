@@ -18,7 +18,6 @@ const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
       .padStart(2, '0')}`;
   };
 
-  // Calculate progress percentage
   const progress = (timer.remainingTime / timer.duration) * 100;
 
   const handleStart = () => {

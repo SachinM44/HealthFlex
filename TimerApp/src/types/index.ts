@@ -9,7 +9,7 @@ export type Category = {
 export type Timer = {
   id: string;
   name: string;
-  duration: number; // in seconds
+  duration: number;
   remainingTime: number;
   status: TimerStatus;
   categoryId: string;
